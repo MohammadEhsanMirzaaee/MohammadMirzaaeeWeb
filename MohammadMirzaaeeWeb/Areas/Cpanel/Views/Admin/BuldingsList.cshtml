@@ -1,0 +1,11 @@
+﻿@model MohammadMirzaaeeWeb.Models.BuildingViewModel
+@{
+    ViewBag.Title = "BuldingsList";
+}
+
+<h2>BuldingsList</h2>
+
+@foreach(var b in Model.BuildingsList)
+{
+    @Html.ActionLink(b.Name, "EditContentPage", "Admin", new { BuildingID = b.BuildingID }, null)
+}

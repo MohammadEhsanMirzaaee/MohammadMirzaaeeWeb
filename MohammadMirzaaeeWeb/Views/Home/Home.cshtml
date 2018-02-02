@@ -1,0 +1,12 @@
+﻿@model MohammadMirzaaeeWeb.Models.CategoryViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+@foreach(var c in Model.CategoriesList)
+{
+    <div>@c.Name</div>
+    <br />
+}

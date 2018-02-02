@@ -1,0 +1,30 @@
+﻿@model MohammadMirzaaeeWeb.Models.CategoryViewModel
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<h2>AddCategory</h2>
+
+@using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post, 
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Category.Name)
+    @Html.TextBoxFor(m => m.Category.Name)
+    <br />
+    @Html.LabelFor(m => m.Category.Priority)
+    @Html.TextBoxFor(m => m.Category.Priority)
+    <br />
+    <label for="file">:آپلود عکس اصلی</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="ثبت" />
+}
+
+
+
+@if (Model != null)
+{
+    if (Model.EndUserMessage != null)
+    {
+        <div>@Model.EndUserMessage</div>
+    }
+}

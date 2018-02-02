@@ -1,0 +1,12 @@
+﻿@model MohammadMirzaaeeWeb.Models.CategoryViewModel
+@{
+    ViewBag.Title = "CategoriesList";
+}
+
+<h2>CategoriesList</h2>
+
+@foreach (var c in Model.CategoriesList)
+{
+    @Html.ActionLink(c.Name, "BuldingsListById", "Admin", new { CategoryID = c.CategoryID }, null)
+}
+
