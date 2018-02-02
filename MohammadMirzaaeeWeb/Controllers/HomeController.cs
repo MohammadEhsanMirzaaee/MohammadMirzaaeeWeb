@@ -26,6 +26,12 @@ namespace MohammadMirzaaeeWeb.Controllers
             return View(cvm);
         }
 
+        public ActionResult Building(Building building)
+        {
+            BuildingViewModel bvm = new BuildingViewModel();
+            bvm.Building = BuildingsRepository.GetBuilding(building);
+            return View(bvm);
+        }
         public ActionResult BuildingsList(Category category)
         {
             BuildingViewModel bvm = new BuildingViewModel();
