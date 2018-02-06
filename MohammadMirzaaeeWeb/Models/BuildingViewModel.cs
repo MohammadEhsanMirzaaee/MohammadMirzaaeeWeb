@@ -10,5 +10,6 @@ namespace MohammadMirzaaeeWeb.Models
     {
         public List<Building> BuildingsList { get; set; }
         public Building Building { get; set; }
+        public HttpPostedFileBase Image { get; set; }
     }
 }

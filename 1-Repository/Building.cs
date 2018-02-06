@@ -11,11 +11,18 @@ namespace _1_Repository
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Building
     {
         public int BuildingID { get; set; }
+
+        [Display(Name ="⁄‰Ê«‰")]
         public string Name { get; set; }
+
+        [AllowHtml]
+        [Display(Name = "„Õ Ê«")]
         public string Content { get; set; }
         public Nullable<int> Priority { get; set; }
         public string ImageAddress { get; set; }

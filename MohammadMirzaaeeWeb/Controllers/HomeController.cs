@@ -13,9 +13,9 @@ namespace MohammadMirzaaeeWeb.Controllers
         CategoriesRepository CategoriesRepository;
         BuildingsRepository BuildingsRepository;
 
-        public HomeController(CategoriesRepository categoriesRepository)
+        public HomeController()
         {
-            CategoriesRepository = categoriesRepository;
+            CategoriesRepository = new CategoriesRepository();
             BuildingsRepository = new BuildingsRepository();
         }
 

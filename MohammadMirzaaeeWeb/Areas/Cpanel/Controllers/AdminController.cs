@@ -2,6 +2,7 @@
 using MohammadMirzaaeeWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,11 +29,22 @@ namespace MohammadMirzaaeeWeb.Areas.Cpanel.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddContent(Example example)
+        public ActionResult AddContent(Building building, HttpPostedFileBase file)
         {
             return View();
         }
+        public ActionResult UploadContentImage()
+        {
+            var file = Request.Files["Filedata"];
+            string extension = Path.GetExtension(file.FileName);
+            string fileid = Guid.NewGuid().ToString();
+            fileid = Path.ChangeExtension(fileid, extension);
 
+            string savePath = Server.MapPath(@"~\images\content" + fileid);
+            file.SaveAs(savePath);
+
+            return Content(Url.Content(@"~\images\content" + fileid));
+        }
         public ActionResult AddCategory(CategoryViewModel cvm)
         { 
             return View(cvm);
@@ -45,7 +57,7 @@ namespace MohammadMirzaaeeWeb.Areas.Cpanel.Controllers
             string path = System.IO.Path.Combine(
                                    Server.MapPath("~/images/main"), pic);
             file.SaveAs(path);
-            category.ImageAddress = path;
+            category.ImageAddress = "/images/main/" + pic;
             CategoryViewModel cvm = new CategoryViewModel();
             CategoriesRepository.Add(category);
             cvm.EndUserMessage = "با موفقیت اضافه شد";

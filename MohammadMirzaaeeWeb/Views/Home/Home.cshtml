@@ -5,8 +5,12 @@
 
 <h2>Home</h2>
 
-@foreach(var c in Model.CategoriesList)
+@foreach (var c in Model.CategoriesList)
 {
     <div>@c.Name</div>
+    if (c.ImageAddress != null)
+    {
+    <img src="@Url.Content(c.ImageAddress)" alt="IMAGES" />
+    }
     <br />
 }
