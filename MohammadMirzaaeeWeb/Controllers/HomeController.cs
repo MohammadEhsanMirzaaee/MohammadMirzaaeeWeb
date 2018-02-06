@@ -25,7 +25,12 @@ namespace MohammadMirzaaeeWeb.Controllers
             cvm.CategoriesList = CategoriesRepository.CategoriesList();
             return View(cvm);
         }
-
+        public ActionResult CategoriesList()
+        {
+            CategoryViewModel cvm = new CategoryViewModel();
+            cvm.CategoriesList = CategoriesRepository.CategoriesList();
+            return View(cvm);
+        }
         public ActionResult Building(Building building)
         {
             BuildingViewModel bvm = new BuildingViewModel();
