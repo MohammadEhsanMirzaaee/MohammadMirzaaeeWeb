@@ -1,6 +1,8 @@
 ﻿using _1_Repository;
 using MohammadMirzaaeeWeb.Models;
+using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -69,6 +71,10 @@ namespace MohammadMirzaaeeWeb.Areas.Cpanel.Controllers
             cvm.CategoriesList = CategoriesRepository.CategoriesList();
             return View(cvm);
         }
+        public ActionResult AddBuilding()
+        {
+            return View();
+        }
         public ActionResult BuldingsList(BuildingViewModel bvm)
         {
             return View(bvm);
@@ -86,6 +92,14 @@ namespace MohammadMirzaaeeWeb.Areas.Cpanel.Controllers
             BuildingViewModel bvm = new BuildingViewModel();
             bvm.Building = BuildingsRepository.GetBuilding(building);
             return View(bvm);
+        }
+        [HttpPost]
+        public ActionResult FroalaUploadImage(HttpPostedFileBase file, int? postId) // نام پارامتر فایل را تغییر ندهید
+        {
+            var fileName = Path.GetFileName(file.FileName);
+            var rootPath = Server.MapPath("~/images/");
+            file.SaveAs(Path.Combine(rootPath, fileName));
+            return Json(new { link = "images/" + fileName }, JsonRequestBehavior.AllowGet);
         }
     }
 }
