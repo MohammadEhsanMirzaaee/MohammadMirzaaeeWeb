@@ -37,11 +37,13 @@ namespace MohammadMirzaaeeWeb.Controllers
             bvm.Building = BuildingsRepository.GetBuilding(building);
             return View(bvm);
         }
-        public ActionResult BuildingsList(Category category)
+        public JsonResult BuildingsList(Category category)
         {
             BuildingViewModel bvm = new BuildingViewModel();
             bvm.BuildingsList = BuildingsRepository.BuldingsListById(category);
-            return View(bvm);
+            var jsonResult = new JsonResult();
+            jsonResult.Data = bvm.BuildingsList;
+            return jsonResult;
         }
     }
 }
