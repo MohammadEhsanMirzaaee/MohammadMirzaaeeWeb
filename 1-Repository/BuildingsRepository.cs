@@ -8,6 +8,11 @@ namespace _1_Repository
 {
     public class BuildingsRepository : BaseRepository
     {
+        public void Add(Building building)
+        {
+            Context.Buildings.Add(building);
+            Context.SaveChanges();
+        }
         public List<Building> BuldingsListById(Category category)
         {
             return Context.Buildings.Where(x => x.CategoryRefID == category.CategoryID).ToList();

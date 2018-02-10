@@ -37,6 +37,8 @@ namespace MohammadMirzaaeeWeb.Controllers
             bvm.Building = BuildingsRepository.GetBuilding(building);
             return View(bvm);
         }
+
+        [HttpPost]
         public JsonResult BuildingsList(Category category)
         {
             BuildingViewModel bvm = new BuildingViewModel();

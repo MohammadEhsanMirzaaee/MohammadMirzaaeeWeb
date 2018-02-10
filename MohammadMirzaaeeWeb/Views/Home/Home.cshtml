@@ -1,16 +1,254 @@
 ﻿@model MohammadMirzaaeeWeb.Models.CategoryViewModel
 @{
+    Layout = null;
     ViewBag.Title = "Home";
 }
 
-<h2>Home</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>عنوان</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/bootstrap.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/bootstrap-rtl.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/fonts/font-awesome/css/font-awesome.css")">
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/prettyPhoto.css">
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>-->
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    @*<div id="preloader">
+            <div id="status"> <img src="~/images/preloader.gif" height="64" width="64" alt=""> </div>
+        </div>*@
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+                <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-paper-plane-o"></i> عنوان</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden"> <a href="#page-top"></a> </li>
+                    <li> <a class="page-scroll" href="#about">درباره ما</a> </li>
+                    <li> <a class="page-scroll" href="#services">خدمات</a> </li>
+                    <li> <a class="page-scroll" href="#contact">تماس با ما</a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <div id="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1>
+                            متن
 
-@foreach (var c in Model.CategoriesList)
-{
-    <div>@c.Name</div>
-    if (c.ImageAddress != null)
-    {
-    <img src="@Url.Content(c.ImageAddress)" alt="IMAGES" />
-    }
-    <br />
-}
+                            <span class="brand-heading">
+                                <!--The orange text should type between span element-->
+                                ابتدایی
+                            </span>
+                        </h1>
+                        <p class="intro-text">توضیحات ابتدای صفحه</p>
+                        <a href="#about" class="btn btn-default page-scroll">بیشتر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="section-title text-center center">
+                <h2>درباره ما</h2>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><img src="img/about.jpg" class="img-responsive"></div>
+                <div class="col-md-4">
+                    <div class="about-text">
+                        <!--Header of the Right column-->
+                        <h4>ما کی هستیم؟</h4>
+                        <!--Paragraphs of right column should place below. each paragraph should be between a <p> tag-->
+                        <p>لوری الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-text">
+                        <!--Header of the left column-->
+                        <h4>ما چه کار می‌کنیم؟</h4>
+                        <!--Top Paragraph of left column should place below. paragraph should be between a <p> tag-->
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز</p>
+                        <!--What we do list-->
+                        <ul>
+                            <!--list items-->
+                            <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                            <li>لورم ایپسوم متن ساختگی با </li>
+                            <li>لورم ایپسوم متن ساختگی با تولید</li>
+                            <li>لورم ایپسوم متن ساختگی</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Section -->
+    <div id="services" class="text-center">
+        <div class="container">
+            <div class="section-title center">
+                <h2>خدمات ما</h2>
+                <hr>
+            </div>
+            <div class="space"></div>
+            <div class="row" id="service-area">
+                @{
+                    int counter = 0;
+                }
+                @foreach (var c in Model.CategoriesList)
+                {
+                    <!--Service block start-->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service" sid="@c.CategoryID">
+                            <img alt="@c.Name" title="@c.Name" src="@c.ImageAddress">
+
+                            <h3>@c.Name</h3>
+                        </div>
+                    </div>
+                    <!--End of Service block-->
+                    counter += 1;
+                    if (counter == 4)
+                    {
+                        <div class="space"></div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Section -->
+    <!-- Contact Section -->
+    <div id="contact" class="text-center">
+        <div class="container">
+            <div class="section-title center">
+                <h2>تماس با ما</h2>
+                <hr>
+                <!--Text of the contact us should place between below <p> tag-->
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <!--Address column-->
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <!--Address first part-->
+                        <p>
+                            4321 California St,<br>
+                            <!--Address second part-->
+                            San Francisco, CA 12345
+                        </p>
+                    </div>
+                </div>
+                <!--Email column-->
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <i class="fa fa-envelope-o fa-2x"></i>
+                        <p>info@company.com</p>
+                    </div>
+                </div>
+                <!--Phone numbers column-->
+                <div class="col-md-4">
+                    <div class="contact-item">
+                        <i class="fa fa-phone fa-2x"></i>
+                        <!--First phone-->
+                        <p>
+                            +1 123 456 1234<br>
+                            <!--Second phone-->
+                            +1 321 456 1234
+                        </p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <h3>ارسال پیام</h3>
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-control" placeholder="نام" required="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control" placeholder="ایمیل" required="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="متن پیام" required></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-default">ارسال</button>
+                </form>
+                <div class="social">
+                    <h3>مارا در شبکه‌های اجتماعی دنبال کنید</h3>
+                    <ul>
+                        <!--Place facebook url instead of # -->
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <!--Place twitter url instead of # -->
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <!--Place dribbble url instead of # -->
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <!--Place github url instead of # -->
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        <!--Place instagram url instead of # -->
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <!--Place linkedin url instead of # -->
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p>تمامی حقوق محفوظ است</p>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="~/Scripts/jquery.1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/SmoothScroll.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.isotope.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="~/Scripts/contact_me.js"></script>
+    <!-- Javascripts
+        ================================================== -->
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+</body>
+</html>

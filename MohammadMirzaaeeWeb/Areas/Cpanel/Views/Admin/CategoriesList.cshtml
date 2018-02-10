@@ -8,5 +8,9 @@
 @foreach (var c in Model.CategoriesList)
 {
     @Html.ActionLink(c.Name, "BuldingsListById", "Admin", new { CategoryID = c.CategoryID }, null)
-}
+    using (Html.BeginForm("DeleteCategory", "Admin", new { CategoryID = c.CategoryID }))
+    {
+        <input type="submit" value="حذف" />
+    }
+    }
 
